@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgroPrime | Premium Agricultural Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    * {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+    }
+
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.05);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    }
+
+    .glass-panel:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 56px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-carousel {
+      animation: slide 20s infinite ease-in-out;
+    }
+
+    @keyframes slide {
+
+      0%,
+      20% {
+        background-image: url("eskape1.jpg");
+      }
+
+      25%,
+      45% {
+        background-image: url("eskape2.jpg");
+      }
+
+      50%,
+      70% {
+        background-image: url("eskape3.jpg");
+      }
+
+      75%,
+      95% {
+        background-image: url("eskape4.jpg");
+      }
+    }
+
+    .stat-card {
+      transition: all 0.4s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(39, 174, 96, 0.15);
+    }
+
+    .service-icon {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    }
+
+    .service-card:hover .service-icon {
+      transform: scale(1.1) rotate(5deg);
+      background: linear-gradient(135deg, #166534 0%, #27ae60 100%);
+      color: white;
+    }
+
+    .product-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .testimonial-card {
+      transition: all 0.4s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #166534 0%, #27ae60 100%);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(39, 174, 96, 0.3);
+    }
+
+    .btn-secondary {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(90deg, #166534 0%, #27ae60 100%);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover:after {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-800 antialiased">
+  <!-- Premium Navigation -->
+  <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 flex items-center">
+            <span class="text-2xl font-bold">e<span class="text-green-600">SKAPe</span></span>
+          </div>
+        </div>
+        <div class="hidden lg:flex lg:items-center lg:space-x-8">
+          <a href="#beranda" class="nav-link text-gray-700 hover:text-green-600 px-3 py-2 font-medium transition-colors duration-200">Beranda</a>
+          <a href="#program" class="nav-link text-gray-700 hover:text-green-600 px-3 py-2 font-medium transition-colors duration-200">Program</a>
+        </div>
+        <div class="lg:hidden flex items-center">
+          <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-green-600 focus:outline-none">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-white shadow-md">
+      <div class="px-4 pt-2 pb-3 space-y-1">
+        <a href="#beranda" class="nav-link block text-gray-700 hover:text-green-600 px-3 py-2 font-medium">Beranda</a>
+        <a href="#program" class="nav-link block text-gray-700 hover:text-green-600 px-3 py-2 font-medium">Program</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Luxurious Hero Section with Carousel -->
+  <div id="beranda"
+    class="hero-carousel relative pt-24 pb-32 bg-cover bg-center bg-no-repeat min-h-screen flex items-center">
+    <div class="absolute inset-0 hero-gradient"></div>
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 relative z-10">
+      <div class=" max-w-2xl rounded-2xl p-10 text-white">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          Sentra <span class="text-green-300">Kewirausahaan</span> Sarana
+          Asimilasi Edukasi
+        </h1>
+      </div>
+    </div>
+    <a href="#program">
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+        <svg class="h-8 w-8 text-white animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </a>
+
+  </div>
+
+
+
+  <!-- Premium Solutions Section -->
+  <section class="py-24 bg-white" id="program">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="text-center mb-20">
+        <h2 class="text-4xl font-bold text-gray-900 mt-3 mb-6">
+          <span class="text-green-600">Program</span> Unggulan
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="glass-panel rounded-lg p-4">
+          <div
+            class="service-icon bg-green-50 w-12 h-12 rounded-lg flex items-center justify-center mb-4 text-green-600"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">P4GN</h3>
+        </div>
+      
+        <div class="glass-panel rounded-lg p-4">
+          <div
+            class="service-icon bg-green-50 w-12 h-12 rounded-lg flex items-center justify-center mb-4 text-green-600"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">
+            Rehabilitas Sosisal Korban Penyalahgunaan NAPZA
+          </h3>
+        </div>
+      
+        <div class="glass-panel rounded-lg p-4">
+          <div
+            class="service-icon bg-green-50 w-12 h-12 rounded-lg flex items-center justify-center mb-4 text-green-600"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">
+            Konsultasi Adiksi NAPZA
+          </h3>
+        </div>
+        <div class="glass-panel rounded-lg p-4">
+          <div
+            class="service-icon bg-green-50 w-12 h-12 rounded-lg flex items-center justify-center mb-4 text-green-600"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Sekolah Tani (Pelatihan, Praktek, Magang)</h3>
+        </div>
+      
+        <div class="glass-panel rounded-lg p-4">
+          <div
+            class="service-icon bg-green-50 w-12 h-12 rounded-lg flex items-center justify-center mb-4 text-green-600"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Budidaya Tanaman Pangan (Padi)</h3>
+        </div>
+      
+        <div class="glass-panel rounded-lg p-4">
+          <div
+            class="service-icon bg-green-50 w-12 h-12 rounded-lg flex items-center justify-center mb-4 text-green-600"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Bercocok Tanam Hortikultura (Sayuran)</h3>
+        </div>
+      
+        <div class="glass-panel rounded-lg p-4">
+          <div
+            class="service-icon bg-green-50 w-12 h-12 rounded-lg flex items-center justify-center mb-4 text-green-600"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Pembenihan Ikan Tawar (Nila)</h3>
+        </div>
+      
+        <div class="glass-panel rounded-lg p-4">
+          <div
+            class="service-icon bg-green-50 w-12 h-12 rounded-lg flex items-center justify-center mb-4 text-green-600"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Budidaya Ikan Tawar (Nila dan Lele)</h3>
+        </div>
+      </div>
+      
+      <style>
+        .glass-panel {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+      </style>
+    </div>
+  </section>
+
+  <!-- Technology Showcase -->
+  <section class="py-24 bg-gray-50" id="tentang">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="flex flex-col lg:flex-row items-center">
+        <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+         
+          <div class="space-y-6">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-green-100 text-green-600">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h4 class="text-lg font-bold text-gray-900">
+                  Pelayanan Informasi Edukasi NAPZA
+                </h4>
+              </div>
+            </div>
+
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-green-100 text-green-600">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h4 class="text-lg font-bold text-gray-900">Ketahanan Pangan</h4>
+              </div>
+            </div>
+
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-green-100 text-green-600">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="ml-4">
+                <h4 class="text-lg font-bold text-gray-900">
+                  Business Center e'SKAPe'L'PASWOD
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:w-1/2">
+          <div class="glass-panel rounded-2xl overflow-hidden">
+            <div class="aspect-w-16 aspect-h-9 bg-gray-100 flex items-center justify-center p-8">
+              <img src="eskape1.jpg" alt="" srcset="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-24 bg-gray-50" id="artikel">
+    <div class="max-w-5xl mx-auto px-6 sm:px-8 lg:px-10">
+      <div class="text-center mt-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-lg overflow-hidden shadow hover:shadow-md transition-shadow">
+            <img src="eskape2.jpg" alt="Article thumbnail" class="w-full h-40 object-cover" />
+            <div class="p-5">
+              <h4 class="font-medium text-gray-900 mb-2">
+                Pembenihan Ikan Tawar (Nila)
+              </h4>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg overflow-hidden shadow hover:shadow-md transition-shadow">
+            <img src="eskape1.jpg" alt="Article thumbnail" class="w-full h-40 object-cover" />
+            <div class="p-5">
+              <h4 class="font-medium text-gray-900 mb-2">
+                Resto dan Kafe
+              </h4>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg overflow-hidden shadow hover:shadow-md transition-shadow">
+            <img src="eskape5.jpg" alt="Article thumbnail" class="w-full h-40 object-cover" />
+            <div class="p-5">
+              <h4 class="font-medium text-gray-900 mb-2">
+                Budidaya Ikan Tawar (Nila dan Lele)
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+  <!-- Premium Footer -->
+  <footer class="bg-gray-900 text-white flex justify-center items-center">
+    &copy; 2025 Sentra Kwirausahaan Sarana Asimilasi Edukasi
+  </footer>
+
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Active nav link highlighting
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('div[id]');
+    
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 100) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Smooth scroll for anchor links
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth'
+        });
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+
+</html>
+</body>
+
+</html>
